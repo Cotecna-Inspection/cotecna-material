@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { ActionElement, ContextualToolbarComponent, ContextualToolbarDisplayMode } from 'projects/nm/src/public_api';
+import { ActionElement, ContextualToolbarComponent, ContextualToolbarDisplayMode } from 'projects/cm/src/public_api';
 
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatTableDataSource } from '@angular/material/table';
@@ -12,14 +12,14 @@ import { interval, Subscription } from 'rxjs';
 })
 export class AppComponent {
   @ViewChild(ContextualToolbarComponent) 
-  contextualToolbar: ContextualToolbarComponent;
+  contextualToolbar!: ContextualToolbarComponent;
 
   selectedItems: number = 0;
   approvedElements: number = 0;
   actions: ActionElement[] = ACTIONS;
   contextualToolbarDisplayMode: ContextualToolbarDisplayMode = ContextualToolbarDisplayMode.text;
   moreActions: ActionElement[] = MORE_ACTIONS;
-  progressSubscription: Subscription;
+  progressSubscription!: Subscription;
 
   displayedColumns = ['select', 'position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<any>(ELEMENT_DATA);
