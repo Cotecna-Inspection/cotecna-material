@@ -1,6 +1,6 @@
 # Cotecna Material
 
-This project contains the Cotecna Material (cm) library, forked from Nerero Material (nm) library, which aims to provide additional Material Design components that are not availble in Angular Material, at least, at the time of their creation. 
+This project contains the Cotecna Material (cm) library, forked from [Nerero Material](https://github.com/nereolopez/nereo-material) (nm) library, which aims to provide additional Material Design components that are not availble in Angular Material, at least, at the time of their creation. 
 
 ## Local Development
 
