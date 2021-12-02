@@ -15,6 +15,7 @@ describe('FabSpeedDialComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(FabSpeedDialComponent);
     component = fixture.componentInstance;
+    component.actions = [];
     fixture.detectChanges();
   });
 
