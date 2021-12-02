@@ -3,7 +3,7 @@ This project contains [Material Design](https://material.io/design/) components 
 
 It follows the Angular Material project approach, meaning that each component will be inside of its own module, so that you only have to import the one you are interested in, and not the whole library.
 
-Feel free to follow and/or contribute to [the project](https://github.com/nereolopez/nereo-material).
+Feel free to follow and/or contribute to [the project](https://github.com/Cotecna-Inspection/cotecna-material).
 
 ## Add it to your project
 
@@ -11,7 +11,7 @@ Feel free to follow and/or contribute to [the project](https://github.com/nereol
 Inside of your Angular project, run the following command:
 
 ```
-npm install nereo-material --save 
+npm install @cotecna/material --save 
 ```
 
 ### Step 2. Add Dependencies
@@ -64,7 +64,7 @@ It is indeed a set of components (`Backdrop`, `BackdropBackLayer`, `BackdropBack
 #### API Reference
 
 ```ts
-import { BackdropModule } from 'nereo-material';
+import { BackdropModule } from '@cotecna/material';
 ```
 
 #### Methods
@@ -119,9 +119,6 @@ To use the Backdrop functionality like revealing or concealing it, in the compon
   }
 ```
 
-#### Backdrop Demo
-This demo cannot be viewed in the Demo site as the Backdrop itself becomes a shell, but you can see how to use it in the [Github Repo](https://github.com/nereolopez/nereo-material-demo/tree/master/src/app/backdrop-demo).
-
 ### Banner
 This is the [Banner](https://material.io/design/components/banners.html) in Material Design docs. See the image below to understand it easily:
 
@@ -133,7 +130,7 @@ Keep in mind that this is intended to be used only for mid-priority messages whe
 #### API Reference
 
 ```ts
-import { BannerModule } from 'nereo-material';
+import { BannerModule } from '@cotecna/material';
 ```
 
 #### Properties
@@ -165,9 +162,6 @@ Add it as shown below to the component where you want to use it.
 
 Note that the `BannerComponent` is a dumb component, meaning that it does not perform any action whenever one of its buttons are clicked. Instead, it notifies you. Also keep in mind that **the `BannerComponent` does not hide itself, you will have to hide it with the `show` input property after receiving one of the output events.** 
 
-#### Banner Demo
-Check the [demo code](https://github.com/nereolopez/nereo-material-demo/tree/master/src/app/banner-demo) to see how to use the component and the [demo page](https://nereo-material-demo.firebaseapp.com/banner) to see how it looks like.
-
 ### Contextual Toolbar
 This component is what is referred to as the [Contextual Action Bar](https://material.io/design/components/app-bars-top.html#usage) in Material Design docs. See the image below to understand it easily:
 
@@ -181,7 +175,7 @@ It can also display the progress of the actions by using the method `setProgress
 #### API Reference
 
 ```ts
-import { ContextualToolbarModule } from 'nereo-material';
+import { ContextualToolbarModule } from '@cotecna/material';
 ```
 
 #### Appearance
@@ -267,8 +261,6 @@ There is no much text in this component if you consider internationalization, on
 - The `more` button also has an `i18n` attribute, in this case, set to `@@moreActions`. If no key is found in your project, it will show the word "more".
 - For the items in the menu when clicking on `more`, you can use again the `tooltip`attribute of the `ActionElement` when passing the `moreActions` input property to the component.
 
-#### Contextual Toolbar Demo
-Check the [demo code](https://github.com/nereolopez/nereo-material-demo/tree/master/src/app/contextual-toolbar-demo) to see how to use the component and the [demo page](https://nereo-material-demo.firebaseapp.com/contextual-toolbar) to see how it looks like.
 
 ### (FAB) Speed Dial
 This component is what is referred to as the [FAB Speed Dial](https://material.io/design/components/buttons-floating-action-button.html#types-of-transitions) in Material Design docs. See the image below to understand it easily:
@@ -278,7 +270,7 @@ This component is what is referred to as the [FAB Speed Dial](https://material.i
 
 #### API Reference
 ```ts
-import { FabSpeedDialModule } from 'nereo-material';
+import { FabSpeedDialModule } from '@cotecna/material';
 ```
 
 #### Properties
@@ -297,5 +289,3 @@ import { FabSpeedDialModule } from 'nereo-material';
   (clickMenuAction)="onClickMenuAction($event)">
 </cm-fab-speed-dial>
 ```
-#### Speed Dial Demo
-Check the [demo code](https://github.com/nereolopez/nereo-material-demo/tree/master/src/app/speed-dial-demo) to see how to use the component and the [demo page](https://nereo-material-demo.firebaseapp.com/speed-dial) to see how it looks like.
