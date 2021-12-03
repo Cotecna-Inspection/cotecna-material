@@ -1,5 +1,5 @@
 /*
- * Public API Surface of cm
+ * Public API Surface of comat
  */
 
 export * from './lib/model/model';

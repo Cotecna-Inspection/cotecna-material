@@ -12,9 +12,9 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "paths": {
-      "cm": [
-        "dist/cm/cm",
-        "dist/cm"
+      "comat": [
+        "dist/comat/comat",
+        "dist/comat"
       ]
     },
     "declaration": false,

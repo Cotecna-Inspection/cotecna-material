@@ -79,17 +79,17 @@ import { BackdropModule } from '@cotecna/material';
 Add it to your template as shown below:
 
 ```html
-  <cm-backdrop>
-    <cm-backdrop-back-layer>
-      <cm-backdrop-back-layer-toolbar>
+  <comat-backdrop>
+    <comat-backdrop-back-layer>
+      <comat-backdrop-back-layer-toolbar>
         <!-- Back Layer Toolbar Content Here -->
-      </cm-backdrop-back-layer-toolbar>
-      <cm-backdrop-back-layer-content>
+      </comat-backdrop-back-layer-toolbar>
+      <comat-backdrop-back-layer-content>
         <!-- Back Layer Content Here -->
-      </cm-backdrop-back-layer-content>
-    </cm-backdrop-back-layer>
-    <cm-backdrop-front-layer>
-      <cm-backdrop-front-layer-subtitle>
+      </comat-backdrop-back-layer-content>
+    </comat-backdrop-back-layer>
+    <comat-backdrop-front-layer>
+      <comat-backdrop-front-layer-subtitle>
         
         <!-- Front Layer Subtitle can have an Icon, a Title and an Icon Button  like this -->
         <mat-icon>folder</mat-icon>  
@@ -98,11 +98,11 @@ Add it to your template as shown below:
           <mat-icon>more_vert</mat-icon>
         </button>
 
-      </cm-backdrop-front-layer-subtitle>
-      <cm-backdrop-front-layer-content>
-      </cm-backdrop-front-layer-content>
-    </cm-backdrop-front-layer>
-  </cm-backdrop>
+      </comat-backdrop-front-layer-subtitle>
+      <comat-backdrop-front-layer-content>
+      </comat-backdrop-front-layer-content>
+    </comat-backdrop-front-layer>
+  </comat-backdrop>
 ```
 
 To use the Backdrop functionality like revealing or concealing it, in the component where you want to call it from:
@@ -150,14 +150,14 @@ import { BannerModule } from '@cotecna/material';
 Add it as shown below to the component where you want to use it.
 
 ```html
-<cm-banner [icon]="'signal_wifi_off'"
+<comat-banner [icon]="'signal_wifi_off'"
            [show]="showBanner"
            [firstSentence]="'You have lost connection to the internet.'"
            [secondSentence]="'This app is offline.'"
            [mainActionText]="'turn on wifi'"
            [secondaryActionText]="'dismiss'"
            (mainActionClick)="mainActionClicked()"
-           (secondaryActionClick)="secondaryActionClicked()"></cm-banner>
+           (secondaryActionClick)="secondaryActionClicked()"></comat-banner>
 ```
 
 Note that the `BannerComponent` is a dumb component, meaning that it does not perform any action whenever one of its buttons are clicked. Instead, it notifies you. Also keep in mind that **the `BannerComponent` does not hide itself, you will have to hide it with the `show` input property after receiving one of the output events.** 
@@ -244,12 +244,12 @@ You can use the [`contextualizeTo` property](#properties) with the values `page`
 Add it to as shown below components where you will have selections:
 
 ```html
-<cm-contextual-toolbar [count]="selection.selected.length"
+<comat-contextual-toolbar [count]="selection.selected.length"
                        [actions]="actions"
                        [moreActions]="moreActions"
                        [contextualizeTo]="'card'"
                        (selectedAction)="actionSelected($event)"
-                       (clearSelection)="clearSelection()"></cm-contextual-toolbar>
+                       (clearSelection)="clearSelection()"></comat-contextual-toolbar>
 ```
 
 Note that the `ContextualToolbarComponent` itself does not do any action, but notifies you instead. This means that you need to listen to the events it emits and take action. For instance, when the component emits the `clearSelection` event, you will need to clear the selection on your component. In this way, when the `count` is 0, the `ContextualToolbarComponent` will dissappear.
@@ -283,9 +283,9 @@ import { FabSpeedDialModule } from '@cotecna/material';
 #### Using the Speed Dial
 
 ```html
-<cm-fab-speed-dial
+<comat-fab-speed-dial
   [mainIcon]="'add'"
   [actions]="fabSpeedDialMenuActions"
   (clickMenuAction)="onClickMenuAction($event)">
-</cm-fab-speed-dial>
+</comat-fab-speed-dial>
 ```

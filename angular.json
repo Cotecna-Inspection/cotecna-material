@@ -109,23 +109,23 @@
         }
       }
     },
-    "cm": {
+    "comat": {
       "projectType": "library",
-      "root": "projects/cm",
-      "sourceRoot": "projects/cm/src",
-      "prefix": "lib",
+      "root": "projects/comat",
+      "sourceRoot": "projects/comat/src",
+      "prefix": "comat",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/cm/ng-package.json"
+            "project": "projects/comat/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/cm/tsconfig.lib.prod.json"
+              "tsConfig": "projects/comat/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/cm/tsconfig.lib.json"
+              "tsConfig": "projects/comat/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -133,9 +133,9 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/cm/src/test.ts",
-            "tsConfig": "projects/cm/tsconfig.spec.json",
-            "karmaConfig": "projects/cm/karma.conf.js"
+            "main": "projects/comat/src/test.ts",
+            "tsConfig": "projects/comat/tsconfig.spec.json",
+            "karmaConfig": "projects/comat/karma.conf.js"
           }
         }
       }

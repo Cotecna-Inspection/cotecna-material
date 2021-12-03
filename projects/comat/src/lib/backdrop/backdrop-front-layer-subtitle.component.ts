@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'cm-backdrop-front-layer-subtitle',
+  selector: 'comat-backdrop-front-layer-subtitle',
   template: `<ng-container>
               <ng-content select="mat-icon" class="subtitle-icon"></ng-content>
               <ng-content select="span"></ng-content>

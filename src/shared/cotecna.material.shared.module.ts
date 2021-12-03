@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ContextualToolbarModule, BackdropModule, FabSpeedDialModule } from 'projects/cm/src/public_api';
+import { ContextualToolbarModule, BackdropModule, FabSpeedDialModule } from 'projects/comat/src/public_api';
 
 @NgModule({
     declarations: [

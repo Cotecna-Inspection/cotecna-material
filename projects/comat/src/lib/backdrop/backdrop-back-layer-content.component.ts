@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'cm-backdrop-back-layer-content',
+  selector: 'comat-backdrop-back-layer-content',
   template: `
     <ng-content></ng-content>
   `,

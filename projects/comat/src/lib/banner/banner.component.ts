@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'cm-banner',
+  selector: 'comat-banner',
   template: `
   <mat-card *ngIf="show">
     <mat-card-content>

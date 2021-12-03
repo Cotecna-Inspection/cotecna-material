@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'cm-backdrop',
+  selector: 'comat-backdrop',
   template: `
-    <ng-content select="cm-backdrop-back-layer"></ng-content>
-    <ng-content select="cm-backdrop-front-layer"></ng-content>
+    <ng-content select="comat-backdrop-back-layer"></ng-content>
+    <ng-content select="comat-backdrop-front-layer"></ng-content>
   `,
   styles: [`
     :host {
@@ -37,11 +37,11 @@ export class BackdropComponent {
   }
 
   private getBackLayer(): HTMLElement {
-    return <HTMLElement>document.querySelector('cm-backdrop-back-layer-content')
+    return <HTMLElement>document.querySelector('comat-backdrop-back-layer-content')
   }
 
   private getFrontLayer(): HTMLElement {
-    return <HTMLElement>document.querySelector('cm-backdrop-front-layer');
+    return <HTMLElement>document.querySelector('comat-backdrop-front-layer');
   }
 
   private getToolbar(): HTMLElement {

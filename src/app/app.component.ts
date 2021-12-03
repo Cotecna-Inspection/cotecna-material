@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { ActionElement, ContextualToolbarComponent, ContextualToolbarDisplayMode } from 'projects/cm/src/public_api';
+import { ActionElement, ContextualToolbarComponent, ContextualToolbarDisplayMode } from 'projects/comat/src/public_api';
 
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatTableDataSource } from '@angular/material/table';

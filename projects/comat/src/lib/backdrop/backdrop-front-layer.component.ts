@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'cm-backdrop-front-layer',
+  selector: 'comat-backdrop-front-layer',
   template: `
-    <ng-content select="cm-backdrop-front-layer-subtitle"></ng-content>
-    <ng-content select="cm-backdrop-front-layer-content"></ng-content>    
+    <ng-content select="comat-backdrop-front-layer-subtitle"></ng-content>
+    <ng-content select="comat-backdrop-front-layer-content"></ng-content>    
   `,
   styles: [`
     :host{

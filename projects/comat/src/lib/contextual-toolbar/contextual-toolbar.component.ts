@@ -4,7 +4,7 @@ import { ActionElement } from '../../public_api';
 import { ContextualToolbarDisplayMode } from '../model/model';
 
 @Component({
-  selector: 'cm-contextual-toolbar',
+  selector: 'comat-contextual-toolbar',
   templateUrl: './contextual-toolbar.component.html',
   styleUrls: ['./contextual-toolbar.component.scss']
 })

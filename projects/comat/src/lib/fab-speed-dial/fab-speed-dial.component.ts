@@ -3,14 +3,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActionElement } from '../model/action-element';
 
 @Component({
-  selector: 'cm-fab-speed-dial',
+  selector: 'comat-fab-speed-dial',
 	template: `
 		<div *ngIf="isCorrectActionsNumber">
-            <div id="cm-fab-speed-dial-button-overlay"></div>
-            <div class="cm-fab-speed-dial-button-component">
-                <div *ngIf="showActions" [@speedDialStagger]="actions.length" class="cm-fab-speed-dial-menu-actions">
-                    <div *ngFor="let action of actions" class="cm-fab-speed-dial-mini-button">
-                        <mat-card class="cm-fab-speed-dial-card-action" *ngIf="action.name">
+            <div id="comat-fab-speed-dial-button-overlay"></div>
+            <div class="comat-fab-speed-dial-button-component">
+                <div *ngIf="showActions" [@speedDialStagger]="actions.length" class="comat-fab-speed-dial-menu-actions">
+                    <div *ngFor="let action of actions" class="comat-fab-speed-dial-mini-button">
+                        <mat-card class="comat-fab-speed-dial-card-action" *ngIf="action.name">
                             {{ action.name }}
                         </mat-card>
                         <button mat-mini-fab color="primary" (click)="actionSelected(action)"> 
@@ -25,25 +25,25 @@ import { ActionElement } from '../model/action-element';
         </div>
 		`,
   styles: [`
-    .cm-fab-speed-dial-button-component {
+    .comat-fab-speed-dial-button-component {
         position: fixed;
         bottom: 16px;
         right: 16px;
         text-align: right;
     }
-    .cm-fab-speed-dial-mini-button {
+    .comat-fab-speed-dial-mini-button {
         display: flex;
         align-items: flex-end;
         margin-bottom: 16px;
     }
-    .cm-fab-speed-dial-card-action {
+    .comat-fab-speed-dial-card-action {
         margin-right: 16px;
         padding: 12px;
         text-align: center;
         padding-right: 16px;
         padding-left: 16px;
     }
-    .cm-fab-speed-dial-menu-actions {
+    .comat-fab-speed-dial-menu-actions {
         flex-direction: column-reverse;
         display: flex;
         align-items: flex-end;
@@ -51,7 +51,7 @@ import { ActionElement } from '../model/action-element';
         position: relative;
         bottom: 56px;
     }
-    .cm-fab-speed-dial-overlay {
+    .comat-fab-speed-dial-overlay {
         width: 100%;
         height: 100%;
         position: fixed;
@@ -98,12 +98,12 @@ export class FabSpeedDialComponent implements OnInit {
     if (this.showActions) {
       this.fabSpeedDialState = 'active';
       this.displayedIcon = 'close';
-      document.getElementById('cm-fab-speed-dial-button-overlay')!.classList.add('cm-fab-speed-dial-overlay');
+      document.getElementById('comat-fab-speed-dial-button-overlay')!.classList.add('comat-fab-speed-dial-overlay');
     } 
     else {
       this.fabSpeedDialState = 'inactive';
       this.displayedIcon = this.mainIcon;
-      document.getElementById('cm-fab-speed-dial-button-overlay')!.classList.remove('cm-fab-speed-dial-overlay');
+      document.getElementById('comat-fab-speed-dial-button-overlay')!.classList.remove('comat-fab-speed-dial-overlay');
     }
   }
 
