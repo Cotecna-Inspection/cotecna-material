@@ -1,7 +1,11 @@
 {
   "name": "@cotecna/material",
   "version": "1.0.0-beta.1",
+  "author": "Cotecna",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords":[
     "Angular", "Angular Material", "Backdrop", "Banner", "Contextual Toolbar"
   ],
