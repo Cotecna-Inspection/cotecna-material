@@ -1,6 +1,7 @@
 import { FabSpeedDialAnimation } from './fab-speed-dial.animation';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActionElement } from '../model/action-element';
+import { ThemePalette } from '@angular/material/core';
 
 @Component({
   selector: 'comat-fab-speed-dial',
@@ -13,12 +14,12 @@ import { ActionElement } from '../model/action-element';
                         <mat-card class="comat-fab-speed-dial-card-action" *ngIf="action.name">
                             {{ action.name }}
                         </mat-card>
-                        <button mat-mini-fab color="primary" (click)="actionSelected(action)"> 
+                        <button mat-mini-fab [color]="color" (click)="actionSelected(action)">
                             <mat-icon>{{ action.icon }}</mat-icon>
                         </button>
                     </div>
                 </div>
-                <button mat-fab color="primary" (click)="toggleSpeedDial()">
+                <button mat-fab [color]="color" (click)="toggleSpeedDial()">
                     <mat-icon [@fabButtonAnimation]="{value: fabSpeedDialState}">{{ displayedIcon }}</mat-icon>
                 </button>
             </div>
@@ -65,6 +66,8 @@ import { ActionElement } from '../model/action-element';
 })
 export class FabSpeedDialComponent implements OnInit {
   @Input() mainIcon!: string;
+
+  @Input() color : ThemePalette = 'primary';
 
   @Input() actions!: ActionElement[];
 
