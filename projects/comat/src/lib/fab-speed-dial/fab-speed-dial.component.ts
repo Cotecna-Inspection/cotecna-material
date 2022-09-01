@@ -83,8 +83,8 @@ export class FabSpeedDialComponent implements OnInit {
   }
 
 	checkActions() {
-		if (this.actions.length < 3) {
-			console.error('A speed dial should include at least three options.');
+		if (this.actions.length < 2) {
+			console.error('A speed dial should include at least two options.');
 			this.isCorrectActionsNumber = false;
 		}
 		else if (this.actions.length > 6) {
