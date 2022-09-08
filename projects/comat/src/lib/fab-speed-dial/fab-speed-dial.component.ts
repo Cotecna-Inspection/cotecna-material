@@ -67,7 +67,7 @@ import { ThemePalette } from '@angular/material/core';
 export class FabSpeedDialComponent implements OnInit {
 	@Input() mainIcon!: string;
 
-	@Input() color : ThemePalette = 'primary';
+	@Input() color : ThemePalette;
 
 	@Input() actions!: ActionElement[];
 

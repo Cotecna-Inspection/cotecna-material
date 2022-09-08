@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.0.0] - 2022-09-08
 ### Added
 - Angular 14th support.
+### Changed
+- Now theme color selection is undefined instead of primary by default.
 
 ## [1.1.0] - 2022-09-02
 ### Added
