@@ -277,6 +277,7 @@ import { FabSpeedDialModule } from '@cotecna/material';
 | Name                                                      | Description  |
 |---|---|
 | @Input() mainIcon: string                                 | Receives the name of the Material Icon to be displayed in the main FAB  |
+| @Input() color: ThemePalette                              | Theme color palette for the component  |
 | @Input() actions: ActionElement[]                         | Receives an array of actions to be displayed in the right corner. [See above what an action looks like](#actions)  |
 | @Output() selectedAction: EventEmitter<ActionElement>();  | Emits an event with the selected action so that you can process it. |
 
@@ -284,8 +285,9 @@ import { FabSpeedDialModule } from '@cotecna/material';
 
 ```html
 <comat-fab-speed-dial
-  [mainIcon]="'add'"
+  mainIcon="add"
+  color="accent"
   [actions]="fabSpeedDialMenuActions"
-  (clickMenuAction)="onClickMenuAction($event)">
+  (selectedAction)="onClickMenuAction($event)">
 </comat-fab-speed-dial>
 ```
