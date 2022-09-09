@@ -50,7 +50,7 @@ import { ThemePalette } from '@angular/material/core';
         align-items: flex-end;
         margin-right: 8px;
         position: relative;
-        bottom: 56px;
+        bottom: 8px;
     }
     .comat-fab-speed-dial-overlay {
         width: 100%;
