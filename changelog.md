@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Releases]
 
+## [1.1.1] - 2022-09-09
+### Changed
+- Spacing between main FAB button and the menu
+
 ## [1.1.0] - 2022-09-02
 ### Added
 - Added theme color selection for FAB.
