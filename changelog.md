@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Releases]
 
+## [3.0.0-beta-1] - 2022-02-12
+### Added
+- Angular 15th support.
+
 ## [2.0.1] - 2022-09-08
 ### Changed
 - Spacing between FAB and FAB menu
