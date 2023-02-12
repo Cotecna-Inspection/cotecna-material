@@ -1,19 +1,23 @@
 {
   "name": "@cotecna/material",
-  "version": "2.0.1",
+  "version": "3.0.0-beta-1",
   "author": "Cotecna",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "keywords":[
-    "Angular", "Angular Material", "Backdrop", "Banner", "Contextual Toolbar"
+  "keywords": [
+    "Angular",
+    "Angular Material",
+    "Backdrop",
+    "Banner",
+    "Contextual Toolbar"
   ],
   "peerDependencies": {
-    "@angular/common": "^14.1.0",
-    "@angular/core": "^14.1.0",
-    "@angular/platform-browser": "~14.1.0",
-    "@angular/material": "^14.1.0"
+    "@angular/common": "^15.1.4",
+    "@angular/core": "^15.1.4",
+    "@angular/platform-browser": "^15.1.4",
+    "@angular/material": "^15.1.4"
   },
   "dependencies": {
     "tslib": "^2.3.0"
