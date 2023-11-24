@@ -1,6 +1,6 @@
 {
   "name": "@cotecna/material",
-  "version": "4.0.0-beta-1",
+  "version": "5.0.0-beta-1",
   "author": "Cotecna",
   "license": "MIT",
   "publishConfig": {
@@ -14,10 +14,10 @@
     "Contextual Toolbar"
   ],
   "peerDependencies": {
-    "@angular/common": "^16.1.6",
-    "@angular/core": "^16.1.6",
-    "@angular/platform-browser": "^16.1.6",
-    "@angular/material": "^16.1.6"
+    "@angular/common": "^17.0.0",
+    "@angular/core": "^17.0.0",
+    "@angular/platform-browser": "^17.0.0",
+    "@angular/material": "^17.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
