@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Releases]
 
+## [5.0.1] - 2023-12-29
+### Fixed
+- Fix Banner UI
+
 ## [5.0.0-beta-1] - 2023-11-23
 ### Added
 - Angular 17th support.
