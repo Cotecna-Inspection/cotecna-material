@@ -4,29 +4,28 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   selector: 'comat-banner',
   template: `
   <mat-card *ngIf="show">
-    <mat-card-content>
-        <mat-list>
-        <mat-list-item>
-            <mat-icon matListIcon color="primary" *ngIf="icon">{{icon}}</mat-icon>
-            <div id="banner-text-container">
-                <p matLine>{{firstSentence}}</p>
-                <p matLine *ngIf="secondSentence">{{secondSentence}}</p>
-            </div>
-        </mat-list-item>    
-        </mat-list>
-        <div id="banner-actions">
-            <button mat-button color="primary" (click)="secondaryActionClicked()" *ngIf="secondaryActionText">{{secondaryActionText}}</button>  
-            <button mat-button color="primary" (click)="mainActionClicked()">{{mainActionText}}</button>
+    <div id="banner-content">
+        <mat-icon matListIcon color="primary" *ngIf="icon">{{icon}}</mat-icon>
+        <div id="banner-text-container">
+            <p matLine>{{firstSentence}}</p>
+            <p matLine *ngIf="secondSentence">{{secondSentence}}</p>
         </div>
-    </mat-card-content>
-    </mat-card>
+    </div>
+    <div id="banner-actions">
+        <button mat-button color="primary" (click)="secondaryActionClicked()" *ngIf="secondaryActionText">{{secondaryActionText}}</button>  
+        <button mat-button color="primary" (click)="mainActionClicked()">{{mainActionText}}</button>
+    </div>
+</mat-card>
   `,
   styles: [`
     mat-card {
-        height: 52px;
-        padding: 0;
+        box-shadow: none;
+        border-bottom-style: solid;
+        border-bottom-color: rgba(0, 0, 0, 0.25);
+        border-bottom-width: 2px;
+        border-radius: 0px;
     }
-    
+
     mat-card-content{
         align-items: center;
         display: flex;
@@ -48,6 +47,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     #banner-actions button{
         text-transform: uppercase !important;
     }
+
+    #banner-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
          
     mat-card-content,
     mat-list,
@@ -61,10 +66,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     }
 
     @media(max-width:959px){
-        mat-card {
-            height: 112px;
-        }
-        
         mat-card-content,
         mat-list,
         mat-list-item {
