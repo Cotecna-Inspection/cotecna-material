@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Releases]
 
+## [5.0.0] - 2024-02-06
+### Added
+- Fully tested and stable version 5.0.0
+
 ## [5.0.0-beta-2] - 2023-12-29
 ### Fixed
 - Fix Banner UI
