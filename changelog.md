@@ -7,9 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Releases]
 
-## [6.0.0-beta-1] - 2024-08-02
+## [6.0.0] - 2024-11-26
 ### Added
-- Angular 18th support.
+- Angular 18th support: Release Version
+
+## [6.0.0-beta-1] - 2024-11-25
+### Added
+- Angular 18th support: Release Candidate.
 
 ## [5.0.0] - 2024-02-06
 ### Added
