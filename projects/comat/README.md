@@ -289,6 +289,7 @@ import { FabSpeedDialModule } from '@cotecna/material';
   mainIcon="add"
   color="accent"
   [actions]="fabSpeedDialMenuActions"
-  (selectedAction)="onClickMenuAction($event)">
+  (selectedAction)="onClickMenuAction($event)"
+  (stateChanged)="onStateChanged($event)">
 </comat-fab-speed-dial>
 ```
