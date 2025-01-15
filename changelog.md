@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Releases]
 
+## [6.1.0] - 2025-01-15
+### Added
+- New event emitter in FabSpeedDial to notify when the state of the component is changed.
+
 ## [6.0.0] - 2024-11-26
 ### Added
 - Angular 18th support: Release Version

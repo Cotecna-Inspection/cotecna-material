@@ -280,6 +280,7 @@ import { FabSpeedDialModule } from '@cotecna/material';
 | @Input() color: ThemePalette                              | Theme color palette for the component  |
 | @Input() actions: ActionElement[]                         | Receives an array of actions to be displayed in the right corner. [See above what an action looks like](#actions)  |
 | @Output() selectedAction: EventEmitter<ActionElement>();  | Emits an event with the selected action so that you can process it. |
+| @Output() stateChanged: EventEmitter<ToggleState>();      | Emits an event with the current state of the component every time it changes. |
 
 #### Using the Speed Dial
 
