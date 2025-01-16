@@ -2,6 +2,7 @@ import { FabSpeedDialAnimation } from './fab-speed-dial.animation';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActionElement } from '../model/action-element';
 import { ThemePalette } from '@angular/material/core';
+import { ToggleState } from '../model/toggle-state';
 
 @Component({
 	selector: 'comat-fab-speed-dial',
@@ -73,6 +74,8 @@ export class FabSpeedDialComponent implements OnInit {
 
 	@Output() selectedAction = new EventEmitter<ActionElement>();
 
+	@Output() stateChanged = new EventEmitter<ToggleState>();
+
 	showActions: boolean = false;
 	displayedIcon: string = '';
 	fabSpeedDialState: string = '';
@@ -102,11 +105,13 @@ export class FabSpeedDialComponent implements OnInit {
 			this.fabSpeedDialState = 'active';
 			this.displayedIcon = 'close';
 			document.getElementById('comat-fab-speed-dial-button-overlay')!.classList.add('comat-fab-speed-dial-overlay');
+			this.stateChanged.emit({ isActive: true, icon: this.displayedIcon });
 		} 
 		else {
 			this.fabSpeedDialState = 'inactive';
 			this.displayedIcon = this.mainIcon;
 			document.getElementById('comat-fab-speed-dial-button-overlay')!.classList.remove('comat-fab-speed-dial-overlay');
+			this.stateChanged.emit({ isActive: false, icon: this.displayedIcon });
 		}
 	}
 
