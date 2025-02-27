@@ -1,8 +1,13 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 @Component({
-  selector: 'comat-banner',
-  template: `
+    selector: 'comat-banner',
+    template: `
   <mat-card *ngIf="show">
     <div id="banner-content">
         <mat-icon matListIcon color="primary" *ngIf="icon">{{icon}}</mat-icon>
@@ -17,7 +22,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     </div>
 </mat-card>
   `,
-  styles: [`
+    styles: [`
     mat-card {
         box-shadow: none;
         border-bottom-style: solid;
@@ -88,7 +93,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
             width: 100%;
         } 
     }
-  `]
+  `],
+    imports: [
+        CommonModule,
+        MatCardModule,
+        MatListModule,
+        MatIconModule,
+        MatButtonModule
+    ],
 })
 export class BannerComponent implements OnInit {
 
@@ -97,35 +109,35 @@ export class BannerComponent implements OnInit {
 
     @Input()
     icon!: string;
-  
+
     @Input()
     firstSentence!: string;
-  
+
     @Input()
     secondSentence!: string;
-  
+
     @Input()
     mainActionText!: string;
-  
+
     @Input()
     secondaryActionText!: string;
-  
+
     @Output()
     mainActionClick = new EventEmitter();
-  
+
     @Output()
     secondaryActionClick = new EventEmitter();
-  
+
     constructor() { }
-  
+
     ngOnInit() {
     }
-  
-    mainActionClicked(){
-      this.mainActionClick.emit();
+
+    mainActionClicked() {
+        this.mainActionClick.emit();
     }
-  
-    secondaryActionClicked(){
-      this.secondaryActionClick.emit();
+
+    secondaryActionClicked() {
+        this.secondaryActionClick.emit();
     }
-  }
+}

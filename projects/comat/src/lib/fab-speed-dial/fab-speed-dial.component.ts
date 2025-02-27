@@ -3,6 +3,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActionElement } from '../model/action-element';
 import { ThemePalette } from '@angular/material/core';
 import { ToggleState } from '../model/toggle-state';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
 	selector: 'comat-fab-speed-dial',
@@ -63,12 +67,18 @@ import { ToggleState } from '../model/toggle-state';
 		background: rgba(0, 0, 0, 0.32);
 		}
 	`],
-	animations: FabSpeedDialAnimation
+	animations: FabSpeedDialAnimation,
+	imports: [
+		CommonModule,
+		MatButtonModule,
+		MatIconModule,
+		MatCardModule
+	],
 })
 export class FabSpeedDialComponent implements OnInit {
 	@Input() mainIcon!: string;
 
-	@Input() color : ThemePalette;
+	@Input() color: ThemePalette;
 
 	@Input() actions!: ActionElement[];
 
@@ -94,7 +104,7 @@ export class FabSpeedDialComponent implements OnInit {
 			this.isCorrectActionsNumber = false;
 		}
 		else if (this.actions.length > 6) {
-			console.error('A speed dial should include no more than six options.');	
+			console.error('A speed dial should include no more than six options.');
 			this.isCorrectActionsNumber = false;
 		}
 	}
@@ -106,7 +116,7 @@ export class FabSpeedDialComponent implements OnInit {
 			this.displayedIcon = 'close';
 			document.getElementById('comat-fab-speed-dial-button-overlay')!.classList.add('comat-fab-speed-dial-overlay');
 			this.stateChanged.emit({ isActive: true, icon: this.displayedIcon });
-		} 
+		}
 		else {
 			this.fabSpeedDialState = 'inactive';
 			this.displayedIcon = this.mainIcon;

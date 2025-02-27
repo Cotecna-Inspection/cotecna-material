@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -10,15 +11,16 @@ import { Component } from '@angular/core';
     :host {
         width: 100%;
     }
-  `]
+  `],
+  imports: [CommonModule]
 })
 export class BackdropComponent {
   private backLayerMinHeight: number = 56;
-  private frontLayerMinHeight:number = 42;
+  private frontLayerMinHeight: number = 42;
 
   constructor() { }
 
-  public reveal(){
+  public reveal() {
     let backLayer = this.getBackLayer();
     let frontLayer = this.getFrontLayer();
     let toolbar = this.getToolbar();
@@ -28,7 +30,7 @@ export class BackdropComponent {
     this.animateFrontLayerDown(frontLayer, from, to);
   }
 
-  public conceal(){
+  public conceal() {
     let frontLayer = this.getFrontLayer();
 
     let from = frontLayer.offsetTop;
@@ -53,41 +55,41 @@ export class BackdropComponent {
   }
 
   // TODO Refactor animations to single function
-  private animateFrontLayerDown(frontLayer: HTMLElement, from: number, to: number){
+  private animateFrontLayerDown(frontLayer: HTMLElement, from: number, to: number) {
     let pos = from;
     let maxPos = this.getWindowHeight() - this.frontLayerMinHeight;
 
     let interval = setInterval(frame, 3);
-  
+
     function frame() {
       if (pos >= to || pos >= maxPos) {
-        if (to >= maxPos){
+        if (to >= maxPos) {
           frontLayer.style.top = maxPos + 'px';
         }
         else {
           frontLayer.style.top = to + 'px';
         }
-        
+
         clearInterval(interval);
       } else {
-        pos = to > from ? pos + 10 : pos -10;   
-        frontLayer.style.top = pos + 'px'; 
+        pos = to > from ? pos + 10 : pos - 10;
+        frontLayer.style.top = pos + 'px';
       }
     }
   }
 
-  private animateFrontLayerUp(frontLayer: HTMLElement, from: number, to: number){
+  private animateFrontLayerUp(frontLayer: HTMLElement, from: number, to: number) {
     let pos = from;
     let interval = setInterval(frame, 3);
 
     function frame() {
-        if (pos <= to) {
-          frontLayer.style.top = to + 'px';   
-          clearInterval(interval);
-        } else {
-            pos = to > from ? pos + 10 : pos -10;   
-            frontLayer.style.top = pos + 'px'; 
-        }
+      if (pos <= to) {
+        frontLayer.style.top = to + 'px';
+        clearInterval(interval);
+      } else {
+        pos = to > from ? pos + 10 : pos - 10;
+        frontLayer.style.top = pos + 'px';
+      }
     }
   }
 }

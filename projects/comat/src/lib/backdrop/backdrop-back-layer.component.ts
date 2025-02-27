@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -14,6 +15,7 @@ import { Component } from '@angular/core';
       min-height: 56px;      
       width: 100%;
     }
-  `]
+  `],
+  imports: [CommonModule]
 })
 export class BackdropBackLayerComponent { }

@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -28,8 +29,10 @@ import { Component } from '@angular/core';
     :host ::ng-deep .spacer {
       flex: 1 1 auto;
     }
-  `]
+  `],
+  imports: [CommonModule]
+
 })
 export class BackdropFrontLayerSubtitleComponent {
-   
+
 }

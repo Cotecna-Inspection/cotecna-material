@@ -1,14 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'comat-backdrop-back-layer-content',
-  template: `
+    selector: 'comat-backdrop-back-layer-content',
+    template: `
     <ng-content></ng-content>
   `,
-  styles: [`
+    styles: [`
     :host{
       overflow-y: auto;
     }
-  `]
+  `],
+  imports:[CommonModule]    
 })
 export class BackdropBackLayerContentComponent { }

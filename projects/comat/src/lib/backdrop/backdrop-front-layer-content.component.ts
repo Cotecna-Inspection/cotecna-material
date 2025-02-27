@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -10,8 +11,9 @@ import { Component } from '@angular/core';
         overflow-y: auto;
         width: 100%;
     }
-  `]
+  `],
+  imports: [CommonModule]
 })
 export class BackdropFrontLayerContentComponent {
-   
+
 }

@@ -64,7 +64,7 @@ It is indeed a set of components (`Backdrop`, `BackdropBackLayer`, `BackdropBack
 #### API Reference
 
 ```ts
-import { BackdropModule } from '@cotecna/material';
+import { BackdropComponent } from '@cotecna/material';
 ```
 
 #### Methods
@@ -130,7 +130,7 @@ Keep in mind that this is intended to be used only for mid-priority messages whe
 #### API Reference
 
 ```ts
-import { BannerModule } from '@cotecna/material';
+import { BannerComponent } from '@cotecna/material';
 ```
 
 #### Properties
@@ -175,7 +175,7 @@ It can also display the progress of the actions by using the method `setProgress
 #### API Reference
 
 ```ts
-import { ContextualToolbarModule } from '@cotecna/material';
+import { ContextualToolbarComponent } from '@cotecna/material';
 ```
 
 #### Appearance
@@ -270,7 +270,7 @@ This component is what is referred to as the [FAB Speed Dial](https://material.i
 
 #### API Reference
 ```ts
-import { FabSpeedDialModule } from '@cotecna/material';
+import { FabSpeedDialComponent } from '@cotecna/material';
 ```
 
 #### Properties
