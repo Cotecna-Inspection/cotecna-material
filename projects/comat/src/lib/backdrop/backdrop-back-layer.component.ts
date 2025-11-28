@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -12,10 +11,10 @@ import { Component } from '@angular/core';
       display: flex;
       flex-direction: column;
       height: 100%;
-      min-height: 56px;      
+      min-height: 56px;
       width: 100%;
     }
   `],
-  imports: [CommonModule]
+  imports: []
 })
 export class BackdropBackLayerComponent { }

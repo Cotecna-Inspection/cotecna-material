@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -12,7 +11,7 @@ import { Component } from '@angular/core';
         width: 100%;
     }
   `],
-  imports: [CommonModule]
+  imports: []
 })
 export class BackdropFrontLayerContentComponent {
 

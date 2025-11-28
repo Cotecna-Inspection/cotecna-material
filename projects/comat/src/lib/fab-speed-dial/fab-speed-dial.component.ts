@@ -3,7 +3,6 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActionElement } from '../model/action-element';
 import { ThemePalette } from '@angular/material/core';
 import { ToggleState } from '../model/toggle-state';
-import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -11,24 +10,32 @@ import { MatIconModule } from '@angular/material/icon';
 @Component({
 	selector: 'comat-fab-speed-dial',
 	template: `
-		<div *ngIf="isCorrectActionsNumber">
-						<div id="comat-fab-speed-dial-button-overlay"></div>
-						<div class="comat-fab-speed-dial-button-component">
-								<div *ngIf="showActions" [@speedDialStagger]="actions.length" class="comat-fab-speed-dial-menu-actions">
-										<div *ngFor="let action of actions" class="comat-fab-speed-dial-mini-button">
-												<mat-card class="comat-fab-speed-dial-card-action" *ngIf="action.name">
-														{{ action.name }}
-												</mat-card>
-												<button mat-mini-fab [color]="color" (click)="actionSelected(action)">
-														<mat-icon>{{ action.icon }}</mat-icon>
-												</button>
-										</div>
-								</div>
-								<button mat-fab [color]="color" (click)="toggleSpeedDial()">
-										<mat-icon [@fabButtonAnimation]="{value: fabSpeedDialState}">{{ displayedIcon }}</mat-icon>
-								</button>
-						</div>
-				</div>
+		@if (isCorrectActionsNumber) {
+		  <div>
+		    <div id="comat-fab-speed-dial-button-overlay"></div>
+		    <div class="comat-fab-speed-dial-button-component">
+		      @if (showActions) {
+		        <div [@speedDialStagger]="actions.length" class="comat-fab-speed-dial-menu-actions">
+		          @for (action of actions; track action) {
+		            <div class="comat-fab-speed-dial-mini-button">
+		              @if (action.name) {
+		                <mat-card class="comat-fab-speed-dial-card-action">
+		                  {{ action.name }}
+		                </mat-card>
+		              }
+		              <button mat-mini-fab [color]="color" (click)="actionSelected(action)">
+		                <mat-icon>{{ action.icon }}</mat-icon>
+		              </button>
+		            </div>
+		          }
+		        </div>
+		      }
+		      <button mat-fab [color]="color" (click)="toggleSpeedDial()">
+		        <mat-icon [@fabButtonAnimation]="{value: fabSpeedDialState}">{{ displayedIcon }}</mat-icon>
+		      </button>
+		    </div>
+		  </div>
+		}
 		`,
 	styles: [`
 		.comat-fab-speed-dial-button-component {
@@ -69,11 +76,10 @@ import { MatIconModule } from '@angular/material/icon';
 	`],
 	animations: FabSpeedDialAnimation,
 	imports: [
-		CommonModule,
-		MatButtonModule,
-		MatIconModule,
-		MatCardModule
-	],
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule
+],
 })
 export class FabSpeedDialComponent implements OnInit {
 	@Input() mainIcon!: string;

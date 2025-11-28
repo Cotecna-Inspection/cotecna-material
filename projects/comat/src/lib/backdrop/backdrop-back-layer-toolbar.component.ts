@@ -1,9 +1,8 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
     selector: 'comat-backdrop-back-layer-toolbar',
     template: `<ng-content></ng-content>`,
-    imports: [CommonModule]
+    imports: []
 })
 export class BackdropBackLayerToolbarComponent { }

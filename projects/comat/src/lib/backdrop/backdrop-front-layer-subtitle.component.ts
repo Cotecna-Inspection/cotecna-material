@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -14,10 +13,10 @@ import { Component } from '@angular/core';
       align-items: center;
       display: flex;
       flex-direction: row;
-      margin: 12px 16px;      
+      margin: 12px 16px;
       width: auto;
     }
-    
+
     :host ::ng-deep mat-icon{
       margin-right: 8px;
     }
@@ -30,7 +29,7 @@ import { Component } from '@angular/core';
       flex: 1 1 auto;
     }
   `],
-  imports: [CommonModule]
+  imports: []
 
 })
 export class BackdropFrontLayerSubtitleComponent {
