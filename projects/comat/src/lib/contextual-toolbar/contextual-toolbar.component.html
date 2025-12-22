@@ -12,9 +12,9 @@
     <button mat-icon-button 
             *ngFor="let action of actions" 
             (click)="actionSelected(action)"
-            [class.textButton]="showButtonText()">
-      <mat-icon [matTooltip]="action.tooltip ? action.tooltip : action.name"
-                *ngIf="showButtonIcon()">{{action.icon}}</mat-icon>
+            [class.textButton]="showButtonText()"
+            [matTooltip]="action.tooltip ? action.tooltip : action.name">
+      <mat-icon *ngIf="showButtonIcon()">{{action.icon}}</mat-icon>
       <span *ngIf="showButtonText()">{{action.text}}</span>
     </button>
     
