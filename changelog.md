@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Releases]
 
-## [7.0.0-alpha-1] - 2025-11-28
+## [7.0.0-alpha-1] - 2025-12-29
 ### Added
 - Angular 21th support: Alpha Candidate.
 - Components migrated to Stand-Alone Technology
