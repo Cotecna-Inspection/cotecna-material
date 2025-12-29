@@ -13,10 +13,10 @@
       @for (action of actions; track action) {
         <button mat-icon-button
           (click)="actionSelected(action)"
-          [class.textButton]="showButtonText()">
+          [class.textButton]="showButtonText()"
+          [matTooltip]="action.tooltip ? action.tooltip : action.name">
           @if (showButtonIcon()) {
-            <mat-icon [matTooltip]="action.tooltip ? action.tooltip : action.name"
-            fontIcon="action.icon">{{action.icon}}</mat-icon>
+            <mat-icon fontIcon="action.icon">{{action.icon}}</mat-icon>
           }
           @if (showButtonText()) {
             <span>{{action.text}}</span>

@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Angular 21th support: Alpha Candidate.
 - Components migrated to Stand-Alone Technology
 
+## [6.1.1] - 2025-12-22
+### Fixed
+- Tooltips were not appearing on ContextualToolbar due to Angular rendering issues with libraries.
+
 ## [6.1.0] - 2025-01-15
 ### Added
 - New event emitter in FabSpeedDial to notify when the state of the component is changed.
