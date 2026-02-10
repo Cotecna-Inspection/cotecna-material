@@ -2,15 +2,31 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { ActionElement } from '../../public_api';
 import { ContextualToolbarDisplayMode } from '../model/model';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'comat-contextual-toolbar',
   templateUrl: './contextual-toolbar.component.html',
-  styleUrls: ['./contextual-toolbar.component.scss']
+  styleUrls: ['./contextual-toolbar.component.scss'],
+  imports: [
+    CommonModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTooltipModule,
+    MatMenuModule,
+    MatProgressSpinnerModule
+  ],
 })
 export class ContextualToolbarComponent implements OnInit {
 
-  @Input() count!:  number;
+  @Input() count!: number;
 
   @Input() actions!: ActionElement[];
 
@@ -24,9 +40,9 @@ export class ContextualToolbarComponent implements OnInit {
 
   @Output() clearSelection = new EventEmitter();
 
-  classesToApply = { };
+  classesToApply = {};
 
-  progressMessage : BehaviorSubject<string> = new BehaviorSubject<string>('');
+  progressMessage: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
   constructor() { }
 
@@ -42,10 +58,10 @@ export class ContextualToolbarComponent implements OnInit {
     return this.displayMode != ContextualToolbarDisplayMode.icons;
   }
 
-  private setContextualization(){
+  private setContextualization() {
     this.classesToApply = {
       'page-contextual-toolbar': this.contextualizeTo != 'card',
-      'card-contextual-toolbar': this.contextualizeTo == 'card'  
+      'card-contextual-toolbar': this.contextualizeTo == 'card'
     }
   }
 
@@ -57,11 +73,11 @@ export class ContextualToolbarComponent implements OnInit {
     this.progressMessage.next('');
   }
 
-  actionSelected(action: ActionElement): void{
+  actionSelected(action: ActionElement): void {
     this.selectedAction.emit(action);
   }
 
-  clear(): void{
+  clear(): void {
     this.clearSelection.emit();
   }
 

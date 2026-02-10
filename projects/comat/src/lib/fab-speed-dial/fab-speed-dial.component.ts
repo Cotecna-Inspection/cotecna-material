@@ -3,28 +3,39 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ActionElement } from '../model/action-element';
 import { ThemePalette } from '@angular/material/core';
 import { ToggleState } from '../model/toggle-state';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
 	selector: 'comat-fab-speed-dial',
 	template: `
-		<div *ngIf="isCorrectActionsNumber">
-						<div id="comat-fab-speed-dial-button-overlay"></div>
-						<div class="comat-fab-speed-dial-button-component">
-								<div *ngIf="showActions" [@speedDialStagger]="actions.length" class="comat-fab-speed-dial-menu-actions">
-										<div *ngFor="let action of actions" class="comat-fab-speed-dial-mini-button">
-												<mat-card class="comat-fab-speed-dial-card-action" *ngIf="action.name">
-														{{ action.name }}
-												</mat-card>
-												<button mat-mini-fab [color]="color" (click)="actionSelected(action)">
-														<mat-icon>{{ action.icon }}</mat-icon>
-												</button>
-										</div>
-								</div>
-								<button mat-fab [color]="color" (click)="toggleSpeedDial()">
-										<mat-icon [@fabButtonAnimation]="{value: fabSpeedDialState}">{{ displayedIcon }}</mat-icon>
-								</button>
-						</div>
-				</div>
+		@if (isCorrectActionsNumber) {
+		  <div>
+		    <div id="comat-fab-speed-dial-button-overlay"></div>
+		    <div class="comat-fab-speed-dial-button-component">
+		      @if (showActions) {
+		        <div [@speedDialStagger]="actions.length" class="comat-fab-speed-dial-menu-actions">
+		          @for (action of actions; track action) {
+		            <div class="comat-fab-speed-dial-mini-button">
+		              @if (action.name) {
+		                <mat-card class="comat-fab-speed-dial-card-action">
+		                  {{ action.name }}
+		                </mat-card>
+		              }
+		              <button mat-mini-fab [color]="color" (click)="actionSelected(action)">
+		                <mat-icon>{{ action.icon }}</mat-icon>
+		              </button>
+		            </div>
+		          }
+		        </div>
+		      }
+		      <button mat-fab [color]="color" (click)="toggleSpeedDial()">
+		        <mat-icon [@fabButtonAnimation]="{value: fabSpeedDialState}">{{ displayedIcon }}</mat-icon>
+		      </button>
+		    </div>
+		  </div>
+		}
 		`,
 	styles: [`
 		.comat-fab-speed-dial-button-component {
@@ -63,12 +74,17 @@ import { ToggleState } from '../model/toggle-state';
 		background: rgba(0, 0, 0, 0.32);
 		}
 	`],
-	animations: FabSpeedDialAnimation
+	animations: FabSpeedDialAnimation,
+	imports: [
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule
+],
 })
 export class FabSpeedDialComponent implements OnInit {
 	@Input() mainIcon!: string;
 
-	@Input() color : ThemePalette;
+	@Input() color: ThemePalette;
 
 	@Input() actions!: ActionElement[];
 
@@ -94,7 +110,7 @@ export class FabSpeedDialComponent implements OnInit {
 			this.isCorrectActionsNumber = false;
 		}
 		else if (this.actions.length > 6) {
-			console.error('A speed dial should include no more than six options.');	
+			console.error('A speed dial should include no more than six options.');
 			this.isCorrectActionsNumber = false;
 		}
 	}
@@ -106,7 +122,7 @@ export class FabSpeedDialComponent implements OnInit {
 			this.displayedIcon = 'close';
 			document.getElementById('comat-fab-speed-dial-button-overlay')!.classList.add('comat-fab-speed-dial-overlay');
 			this.stateChanged.emit({ isActive: true, icon: this.displayedIcon });
-		} 
+		}
 		else {
 			this.fabSpeedDialState = 'inactive';
 			this.displayedIcon = this.mainIcon;

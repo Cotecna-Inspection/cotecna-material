@@ -10,8 +10,9 @@ import { Component } from '@angular/core';
         overflow-y: auto;
         width: 100%;
     }
-  `]
+  `],
+  imports: []
 })
 export class BackdropFrontLayerContentComponent {
-   
+
 }

@@ -1,21 +1,32 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'comat-banner',
   template: `
-  <mat-card *ngIf="show">
-    <div id="banner-content">
-        <mat-icon matListIcon color="primary" *ngIf="icon">{{icon}}</mat-icon>
+  @if (show) {
+    <mat-card>
+      <div id="banner-content">
+        @if (icon) {
+          <mat-icon matListIcon color="primary">{{icon}}</mat-icon>
+        }
         <div id="banner-text-container">
-            <p matLine>{{firstSentence}}</p>
-            <p matLine *ngIf="secondSentence">{{secondSentence}}</p>
+          <p matLine>{{firstSentence}}</p>
+          @if (secondSentence) {
+            <p matLine>{{secondSentence}}</p>
+          }
         </div>
-    </div>
-    <div id="banner-actions">
-        <button mat-button color="primary" (click)="secondaryActionClicked()" *ngIf="secondaryActionText">{{secondaryActionText}}</button>  
+      </div>
+      <div id="banner-actions">
+        @if (secondaryActionText) {
+          <button mat-button color="primary" (click)="secondaryActionClicked()">{{secondaryActionText}}</button>
+        }
         <button mat-button color="primary" (click)="mainActionClicked()">{{mainActionText}}</button>
-    </div>
-</mat-card>
+      </div>
+    </mat-card>
+  }
   `,
   styles: [`
     mat-card {
@@ -34,7 +45,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
         max-width: 90%;
         flex-wrap: wrap;
     }
-    
+
     #banner-text-container {
         margin-left: 24px;
     }
@@ -53,7 +64,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
         flex-direction: row;
         align-items: center;
     }
-         
+
     mat-card-content,
     mat-list,
     mat-list-item {
@@ -72,7 +83,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
             height: auto !important;
             max-width: 100% !important;
             width: 100% !important;
-        }    
+        }
 
         mat-list-item {
             margin: 12px 0 !important;
@@ -86,46 +97,51 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
             justify-content: flex-end;
             display: flex;
             width: 100%;
-        } 
+        }
     }
-  `]
+  `],
+  imports: [
+    MatCardModule,
+    MatIconModule,
+    MatButtonModule
+  ],
 })
 export class BannerComponent implements OnInit {
 
-    @Input()
-    show!: boolean;
+  @Input()
+  show!: boolean;
 
-    @Input()
-    icon!: string;
-  
-    @Input()
-    firstSentence!: string;
-  
-    @Input()
-    secondSentence!: string;
-  
-    @Input()
-    mainActionText!: string;
-  
-    @Input()
-    secondaryActionText!: string;
-  
-    @Output()
-    mainActionClick = new EventEmitter();
-  
-    @Output()
-    secondaryActionClick = new EventEmitter();
-  
-    constructor() { }
-  
-    ngOnInit() {
-    }
-  
-    mainActionClicked(){
-      this.mainActionClick.emit();
-    }
-  
-    secondaryActionClicked(){
-      this.secondaryActionClick.emit();
-    }
+  @Input()
+  icon!: string;
+
+  @Input()
+  firstSentence!: string;
+
+  @Input()
+  secondSentence!: string;
+
+  @Input()
+  mainActionText!: string;
+
+  @Input()
+  secondaryActionText!: string;
+
+  @Output()
+  mainActionClick = new EventEmitter();
+
+  @Output()
+  secondaryActionClick = new EventEmitter();
+
+  constructor() { }
+
+  ngOnInit() {
   }
+
+  mainActionClicked() {
+    this.mainActionClick.emit();
+  }
+
+  secondaryActionClicked() {
+    this.secondaryActionClick.emit();
+  }
+}

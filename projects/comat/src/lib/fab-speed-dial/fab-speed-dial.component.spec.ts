@@ -7,7 +7,6 @@ describe('FabSpeedDialComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ FabSpeedDialComponent ]
     })
     .compileComponents();
   }));

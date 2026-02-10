@@ -15,10 +15,30 @@ npm install @cotecna/material --save
 ```
 
 ### Step 2. Add Dependencies
+
+#### Icons
+
 - In order to have the [Material Icons](https://material.io/tools/icons/) displayed correctly, make sure to add them by including the following line in your `index.html` file:
 ```html
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 ```
+
+#### Angular Material
+
+- Install Angular Material
+```
+npm install --save @angular/material @angular/cdk
+```
+
+- Add an Angular Material theme. You can create one ([learn how](https://material.angular.io/guide/theming)) or import an existing one by adding it in your `styles.scss` file as follows:
+```css
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+```
+
+### Step 3. Setup Dependencies
+
+#### Ng Modules 
+
 - Import the `BrowserAnimationsModule` into your `AppModule`.
 ```ts
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -41,14 +61,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 export class AppModule { }
 ```
 
-- Install Angular Material
-```
-npm install --save @angular/material @angular/cdk
-```
+#### Stand-Alone 
+- Provide Animations  `provideAnimations()` into your `app.config`.
+```ts
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { provideRouter } from '@angular/router';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
-- Add an Angular Material theme. You can create one ([learn how](https://material.angular.io/guide/theming)) or import an existing one by adding it in your `styles.scss` file as follows:
-```css
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+import { routes } from './app.routes';
+
+export const AppConfig: ApplicationConfig = {
+  providers: [
+    provideAnimations(),
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
+    provideHttpClient(withInterceptorsFromDi()),
+  ]
+};
+
 ```
 
 ## Available Components
@@ -64,7 +95,7 @@ It is indeed a set of components (`Backdrop`, `BackdropBackLayer`, `BackdropBack
 #### API Reference
 
 ```ts
-import { BackdropModule } from '@cotecna/material';
+import { BackdropComponent } from '@cotecna/material';
 ```
 
 #### Methods
@@ -130,7 +161,7 @@ Keep in mind that this is intended to be used only for mid-priority messages whe
 #### API Reference
 
 ```ts
-import { BannerModule } from '@cotecna/material';
+import { BannerComponent } from '@cotecna/material';
 ```
 
 #### Properties
@@ -175,7 +206,7 @@ It can also display the progress of the actions by using the method `setProgress
 #### API Reference
 
 ```ts
-import { ContextualToolbarModule } from '@cotecna/material';
+import { ContextualToolbarComponent } from '@cotecna/material';
 ```
 
 #### Appearance
@@ -270,7 +301,7 @@ This component is what is referred to as the [FAB Speed Dial](https://material.i
 
 #### API Reference
 ```ts
-import { FabSpeedDialModule } from '@cotecna/material';
+import { FabSpeedDialComponent } from '@cotecna/material';
 ```
 
 #### Properties

@@ -8,7 +8,6 @@ describe('ContextualToolbarComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContextualToolbarComponent ]
     })
     .compileComponents();
   }));
