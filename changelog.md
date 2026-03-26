@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Releases]
 
+## [8.0.0-alpha-1] - 2026-03-26
+### Added
+- Angular 21th support: Package Updates.
+
+### Changed
+- Karma was Deprecated in 2023. All the tests have been migrated to Vitest.  See the announcement from the Angular Development Team [here](https://blog.angular.dev/announcing-angular-v21-57946c34f14b)
+
 ## [7.0.0-alpha-1] - 2025-12-29
 ### Added
 - Angular 21th support: Alpha Candidate.

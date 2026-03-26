@@ -76,10 +76,10 @@ import { MatIconModule } from '@angular/material/icon';
 	`],
 	animations: FabSpeedDialAnimation,
 	imports: [
-    MatButtonModule,
-    MatIconModule,
-    MatCardModule
-],
+		MatButtonModule,
+		MatIconModule,
+		MatCardModule
+	],
 })
 export class FabSpeedDialComponent implements OnInit {
 	@Input() mainIcon!: string;

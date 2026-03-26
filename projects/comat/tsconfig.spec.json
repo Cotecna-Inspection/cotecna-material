@@ -4,7 +4,7 @@
   "compilerOptions": {
     "outDir": "../../out-tsc/spec",
     "types": [
-      "jasmine"
+      "vitest/globals"
     ]
   },
   "files": [
@@ -13,5 +13,5 @@
   "include": [
     "**/*.spec.ts",
     "**/*.d.ts"
-  ]
+  ],
 }

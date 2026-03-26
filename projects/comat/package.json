@@ -1,6 +1,7 @@
 {
   "name": "@cotecna/material",
-  "version": "7.0.0-alpha-1",
+  "version": "8.0.0-alpha-1",
+  "repository": "https://github.com/Cotecna-Inspection/cotecna-material",
   "author": "Cotecna",
   "license": "MIT",
   "publishConfig": {
@@ -14,10 +15,10 @@
     "Contextual Toolbar"
   ],
   "peerDependencies": {
-    "@angular/common": "^21.0.6",
-    "@angular/core": "^21.0.6",
-    "@angular/platform-browser": "^21.0.6",
-    "@angular/material": "^21.0.5"
+    "@angular/common": "^21.2.6",
+    "@angular/core": "^21.2.6",
+    "@angular/platform-browser": "^21.2.6",
+    "@angular/material": "^21.2.4"
   },
   "dependencies": {
     "tslib": "^2.3.0"

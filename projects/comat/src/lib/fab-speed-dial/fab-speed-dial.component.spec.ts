@@ -1,22 +1,27 @@
 import { FabSpeedDialComponent } from './fab-speed-dial.component';
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { describe, it, beforeEach, expect } from 'vitest';
+import {provideAnimations} from "@angular/platform-browser/animations";
 
 describe('FabSpeedDialComponent', () => {
   let component: FabSpeedDialComponent;
   let fixture: ComponentFixture<FabSpeedDialComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-    })
-    .compileComponents();
-  }));
+  beforeEach(async () => {
 
-  beforeEach(() => {
+    await TestBed.configureTestingModule({
+      imports: [FabSpeedDialComponent],
+      providers: [provideAnimations(),]
+    }).compileComponents();
+
     fixture = TestBed.createComponent(FabSpeedDialComponent);
     component = fixture.componentInstance;
-    component.actions = [];
-    fixture.detectChanges();
+    component.actions = [{icon:'home ', name:'Home', text:'Home ', tooltip:'Home '},{icon:'search ', name:'Search', text:'Search ', tooltip:'Search '}];
+    component.mainIcon = "home";
+    component.color = "primary";
+    await fixture.whenStable();
   });
+
 
   it('should create', () => {
     expect(component).toBeTruthy();
