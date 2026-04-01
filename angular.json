@@ -116,7 +116,7 @@
       "prefix": "comat",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build:ng-packagr",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "project": "projects/comat/ng-package.json"
           },
