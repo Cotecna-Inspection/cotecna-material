@@ -2,7 +2,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
@@ -14,8 +13,10 @@
     "sourceMap": true,
     "paths": {
       "comat": [
-        "dist/comat/comat",
-        "dist/comat"
+        "./projects/comat/src/public_api.ts"
+      ],
+      "comat/*": [
+        "./projects/comat/src/lib/*"
       ]
     },
     "declaration": false,

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
     selector: 'comat-backdrop-back-layer-content',
@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
       overflow-y: auto;
     }
   `],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: []
 })
 export class BackdropBackLayerContentComponent { }
