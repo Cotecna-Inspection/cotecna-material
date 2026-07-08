@@ -2,16 +2,20 @@
   "name": "@cotecna/material",
   "version": "8.0.0-alpha-1",
   "author": "Cotecna",
-  "license": "MIT",
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cotecna-Inspection/cotecna-material"
   },
   "keywords": [
     "Angular",
     "Angular Material",
     "Backdrop",
     "Banner",
-    "Contextual Toolbar"
+    "Contextual Toolbar",
+    "Fab Speed Dial"
   ],
   "peerDependencies": {
     "@angular/common": "^22.0.5",

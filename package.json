@@ -2,16 +2,18 @@
   "name": "@cotecna/material/demo",
   "description": "An Angular library project, which provides additional Material Design components that are not available in Angular Material, at least, at the time of their creation",
   "version": "0.0.0",
+  "author": "Cotecna",
   "repository": {
     "type": "git",
     "url": "https://github.com/Cotecna-Inspection/cotecna-material"
   },
   "keywords": [
-    "open-source",
-    "angular-material",
-    "nereo-material",
-    "pwa-app",
-    "angular22"
+    "Angular",
+    "Angular Material",
+    "Backdrop",
+    "Banner",
+    "Contextual Toolbar",
+    "Fab Speed Dial"
   ],
   "scripts": {
     "ng": "ng",
