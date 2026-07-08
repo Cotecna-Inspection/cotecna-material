@@ -1,5 +1,5 @@
 import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
-import { ActionElement, ContextualToolbarComponent, ContextualToolbarDisplayMode } from 'projects/comat/src/public_api';
+import { ActionElement, ContextualToolbarComponent, ContextualToolbarDisplayMode } from 'comat';
 
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
