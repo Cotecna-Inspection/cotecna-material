@@ -1,5 +1,5 @@
 import { FabSpeedDialAnimation } from './fab-speed-dial.animation';
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { ActionElement } from '../model/action-element';
 import { ThemePalette } from '@angular/material/core';
 import { ToggleState } from '../model/toggle-state';
@@ -75,6 +75,7 @@ import { MatIconModule } from '@angular/material/icon';
 		}
 	`],
 	animations: FabSpeedDialAnimation,
+	changeDetection: ChangeDetectionStrategy.OnPush,
 	imports: [
     MatButtonModule,
     MatIconModule,

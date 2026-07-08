@@ -1,35 +1,48 @@
 {
   "name": "cotecna-material",
+  "description": "An Angular library project, which provides additional Material Design components that are not available in Angular Material, at least, at the time of their creation",
   "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cotecna-Inspection/cotecna-material"
+  },
+  "keywords": [
+    "open-source",
+    "angular-material",
+    "nereo-material",
+    "pwa-app",
+    "angular22"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve --ssl",
     "build": "ng build",
     "test": "ng test",
     "test-ci": "ng test comat --watch=false --browsers=Chrome --code-coverage=true ",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\" | node -e \"require('fs').rmSync('out', { recursive: true, force: true })\""
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^21.0.6",
-    "@angular/cdk": "^21.0.5",
-    "@angular/common": "^21.0.6",
-    "@angular/compiler": "^21.0.6",
-    "@angular/core": "^21.0.6",
-    "@angular/forms": "^21.0.6",
-    "@angular/localize": "^21.0.6",
-    "@angular/material": "^21.0.5",
-    "@angular/platform-browser": "^21.0.6",
-    "@angular/platform-browser-dynamic": "^21.0.6",
-    "@angular/router": "^21.0.6",
+    "@angular/animations": "^22.0.5",
+    "@angular/cdk": "^22.0.4",
+    "@angular/common": "^22.0.5",
+    "@angular/compiler": "^22.0.5",
+    "@angular/core": "^22.0.5",
+    "@angular/forms": "^22.0.5",
+    "@angular/localize": "^22.0.5",
+    "@angular/material": "^22.0.4",
+    "@angular/platform-browser": "^22.0.5",
+    "@angular/platform-browser-dynamic": "^22.0.5",
+    "@angular/router": "^22.0.5",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^21.0.4",
-    "@angular/cli": "^21.0.4",
-    "@angular/compiler-cli": "^21.0.6",
+    "@angular-devkit/build-angular": "^22.0.5",
+    "@angular/cli": "^22.0.5",
+    "@angular/compiler-cli": "^22.0.5",
     "@types/jasmine": "~4.0.0",
     "jasmine-core": "~4.2.0",
     "karma": "~6.4.0",
@@ -37,7 +50,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "ng-packagr": "^21.0.0",
-    "typescript": "~5.9.3"
+    "ng-packagr": "^22.0.1",
+    "typescript": "~6.0.3"
   }
 }

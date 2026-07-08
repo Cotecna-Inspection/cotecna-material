@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'comat-backdrop-front-layer',
@@ -18,6 +18,7 @@ import { Component } from '@angular/core';
         width: 100%;
     }
   `],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: []
 })
 export class BackdropFrontLayerComponent { }

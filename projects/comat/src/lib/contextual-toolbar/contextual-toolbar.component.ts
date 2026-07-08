@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { ActionElement } from '../../public_api';
 import { ContextualToolbarDisplayMode } from '../model/model';
@@ -14,6 +14,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   selector: 'comat-contextual-toolbar',
   templateUrl: './contextual-toolbar.component.html',
   styleUrls: ['./contextual-toolbar.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     CommonModule,
     MatToolbarModule,

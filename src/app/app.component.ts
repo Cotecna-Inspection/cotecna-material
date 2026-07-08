@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { ActionElement, ContextualToolbarComponent, ContextualToolbarDisplayMode } from 'projects/comat/src/public_api';
 
 import { SelectionModel } from '@angular/cdk/collections';
@@ -12,6 +12,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     ContextualToolbarComponent,
     MatToolbarModule,

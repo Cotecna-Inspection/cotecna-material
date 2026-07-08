@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'comat-backdrop-front-layer-subtitle',
@@ -29,6 +29,7 @@ import { Component } from '@angular/core';
       flex: 1 1 auto;
     }
   `],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: []
 
 })
